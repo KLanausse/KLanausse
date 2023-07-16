@@ -21,29 +21,41 @@ body{
 }
 
 .pill{
-    background: black;
     border-radius: 50pt;
-    height: 8vh;
-    width: 50vh;
+    height: 10%;
+    width: 50%;
+    min-width: 300px;
+    max-width: 80%;
     display: flex;
     align-items: center;
     padding-left: 0.5%;
     padding-right: 0.5%;
     color: azure;
     text-decoration: none;
-    font-size: larger;
+    font-size: 150%;
+    margin-bottom: 2%;
 }
 .pill p{
-    margin: auto;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
 }
 
 .icon{
     height: 75%;
+    margin-left: 5%;
 }
 
 #pfp{
-    height: 35vh;
+    height: 35%;
     border-radius: 20%;
     position: bottom;
 }
 
+#github{
+    background: black;
+}
+
+#mastodon{
+    background: #17063B;
+}
