@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'nintendo_NTLG-DB_002';
+    src: local('nintendo_NTLG-DB_002'), local('nintendoNTLG-DB002'),
+        url('./Fonts/nintendoNTLG-DB002.woff2') format('woff2'),
+        url('./Fonts/nintendoNTLG-DB002.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 body{
     display: flex;
     align-items: center;
@@ -6,6 +17,7 @@ body{
     background-color: #373737;
     color: #AAAAAA;
     flex-direction: column;
+    font-family: nintendo_NTLG-DB_002, sans-serif;
 }
 
 .pill{
