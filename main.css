@@ -46,6 +46,11 @@ body{
     margin-left: 5%;
 }
 
+.subtext{
+    margin-top: -20px;
+    font-weight: inherit;
+}
+
 #pfp{
     height: 35%;
     border-radius: 20%;
