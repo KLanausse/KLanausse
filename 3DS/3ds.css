@@ -1,15 +1,18 @@
+body{
+    height: 480px !important;
+}
 #top{
     /*
     min-width: 100vw; /*400px
     min-height: 240px;
     */
+    min-height: 240px;
     text-align: center;
+    margin: 0 auto;
+    display: block;
 }
 
 #bottom{
-    /*
-    min-width: 320px;
     min-height: 240px;
-    */
     text-align: center;
 }
