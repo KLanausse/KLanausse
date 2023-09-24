@@ -15,7 +15,9 @@ body{
     justify-content: center;
     height: 100vh;
     background-color: #373737;
-    color: #AAAAAA;
+    background-image: url(./Files/Images/BGTileBW.png);
+    background-size: 32px;
+    color: #ffffff;
     flex-direction: column;
     font-family: nintendo_NTLG-DB_002, sans-serif;
 }
