@@ -24,10 +24,9 @@ body{
 
 .pill{
     border-radius: 50pt;
-    height: 10%;
-    width: 50%;
-    min-width: 300px;
-    max-width: 80%;
+    /*height: 10%;*/
+    width: 80vw;
+    max-width: 800px;
     display: flex;
     align-items: center;
     padding-left: 0.5%;
@@ -35,7 +34,7 @@ body{
     color: azure;
     text-decoration: none;
     font-size: 150%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 .pill p{
     position: absolute;
@@ -44,8 +43,10 @@ body{
 }
 
 .icon{
-    height: 75%;
+    height: 7vh;
     margin-left: 5%;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
 }
 
 .subtext{
