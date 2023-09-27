@@ -26,7 +26,11 @@ body{
     border-radius: 50pt;
     /*height: 10%;*/
     width: 80vw;
-    max-width: 800px;
+    max-width: 80vh;
+    height: 7vh;
+    padding: 1vh;
+    margin-bottom: 2vh;
+
     display: flex;
     align-items: center;
     padding-left: 0.5%;
@@ -34,20 +38,27 @@ body{
     color: azure;
     text-decoration: none;
     font-size: 150%;
-    margin-bottom: 1%;
+    background-image: url(./Files/Images/shine.png);
+    background-size: 100% 100%;
 }
 .pill p{
+    /*
     position: absolute;
     transform: translate(-50%, 0);
     left: 50%;
+    */
+    width: inherit;
+    text-align: center;
     font-size: 3vh;
 }
 
 .icon{
-    height: 7vh;
-    margin-left: 5%;
-    margin-bottom: 1vh;
-    margin-top: 1vh;
+    /*height: 7vh;*/
+    height: inherit;
+    margin-left: 1vw;
+    position: absolute;
+    /*margin-bottom: 1vh;
+    margin-top: 1vh;*/
 }
 
 .subtext{
@@ -62,9 +73,9 @@ body{
 }
 
 #github{
-    background: black;
+    background-color: black;
 }
 
 #mastodon{
-    background: #17063B;
+    background-color: #17063B;
 }
