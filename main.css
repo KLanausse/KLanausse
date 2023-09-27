@@ -9,7 +9,7 @@
 }
 
 
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,6 +20,10 @@ body{
     color: #ffffff;
     flex-direction: column;
     font-family: nintendo_NTLG-DB_002, sans-serif;
+}
+
+h1 {
+    font-size: min(5vh,5vw);
 }
 
 .pill{
@@ -41,7 +45,7 @@ body{
     background-image: url(./Files/Images/shine.png);
     background-size: 100% 100%;
 }
-.pill p{
+.pill p {
     /*
     position: absolute;
     transform: translate(-50%, 0);
@@ -52,7 +56,7 @@ body{
     font-size: 3vh;
 }
 
-.icon{
+.icon {
     /*height: 7vh;*/
     height: inherit;
     margin-left: 1vw;
@@ -61,21 +65,27 @@ body{
     margin-top: 1vh;*/
 }
 
-.subtext{
-    margin-top: -20px;
+.subtext {
+    margin-top: 0;
     font-weight: inherit;
+    font-size: max(1.5vw,1.5vh);
 }
 
-#pfp{
-    height: 35%;
+#welcomeText {
+    font-size: min(5vh,5vw);
+    margin-bottom: 0;
+}
+
+#pfp {
+    height: max(30vh,30vw);
     border-radius: 20%;
     position: bottom;
 }
 
-#github{
+#github {
     background-color: black;
 }
 
-#mastodon{
+#mastodon {
     background-color: #17063B;
 }
