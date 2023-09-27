@@ -60,7 +60,7 @@ h1 {
 .icon {
     /*height: 7vh;*/
     height: inherit;
-    margin-left: 1vw;
+    margin-left: max(1vw,1vh);
     position: absolute;
     /*margin-bottom: 1vh;
     margin-top: 1vh;*/
