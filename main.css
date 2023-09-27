@@ -77,7 +77,7 @@ h1 {
 }
 
 #pfp {
-    height: max(30vh,30vw);
+    height: min(30vh,30vw);
     border-radius: 20%;
     position: bottom;
 }
