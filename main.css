@@ -44,6 +44,7 @@ h1 {
     font-size: 150%;
     background-image: url(./Files/Images/Shine.png);
     background-size: 100% 100%;
+    box-shadow: 0 10px 10px #00000080;
 }
 .pill p {
     /*
@@ -69,17 +70,20 @@ h1 {
     margin-top: 0;
     font-weight: inherit;
     font-size: max(1.5vw,1.5vh);
+    text-shadow: 0 10px 10px #00000080;
 }
 
 #welcomeText {
     font-size: min(5vh,5vw);
     margin-bottom: 0;
+    text-shadow: 0 10px 10px #00000080;
 }
 
 #pfp {
     height: min(30vh,30vw);
     border-radius: 20%;
     position: bottom;
+    box-shadow: 0 10px 10px #00000080;
 }
 
 #github {
