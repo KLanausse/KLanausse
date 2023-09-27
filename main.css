@@ -80,7 +80,7 @@ h1 {
 }
 
 #pfp {
-    height: min(30vh,30vw);
+    height: min(30vh,50%);
     border-radius: 20%;
     position: bottom;
     box-shadow: 0 10px 10px #00000080;
