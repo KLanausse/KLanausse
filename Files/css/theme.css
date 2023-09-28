@@ -28,13 +28,15 @@ h1 {
 
 .navbarText {
     text-align: center;
-    display: inline;
+    float: left;
     width: 2vw;
 }
 
 .navbarText a {
     text-decoration: none;
     color: white;
+    padding-left: 2vw;
+    display: block;
 }
 
 .subtext {
