@@ -13,7 +13,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     background-color: #373737;
     background-image: url(/Files/Images/BGTileBW.png);
     background-size: 32px;
@@ -49,6 +48,15 @@ h1 {
     font-weight: inherit;
     font-size: min(2.5vw,2.5vh);
     text-shadow: 0 10px 10px #00000080;
+}
+
+/*need to change this so I can use other colors and what not*/
+.banner {
+    width: 100%;
+    text-align: center;
+    background: #FFFF00A0;
+    padding: 0.5vh;
+    text-shadow: #000 0 0 10px;
 }
 
 #title {

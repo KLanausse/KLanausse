@@ -1,3 +1,7 @@
+body {
+    height: 100vh;
+}
+
 .pill{
     border-radius: 50pt;
     /*height: 10%;*/
