@@ -36,7 +36,7 @@ h1 {
     text-decoration: none;
     color: white;
     display: block;
-    font-size: min(2vh,2vw);
+    font-size: max(2vh,2vw);
 }
 
 .navbarText a b {
