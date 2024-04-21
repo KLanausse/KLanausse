@@ -25,6 +25,10 @@ h1 {
     font-size: min(5vh,5vw);
 }
 
+h2 {
+    font-size: min(4vh,4vw);
+}
+
 .navbarText {
     text-align: center;
     padding: 1vmin 1vmin;
