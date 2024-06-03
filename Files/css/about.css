@@ -1,0 +1,35 @@
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.floaty {
+    animation: float 6s ease-in-out infinite;
+    backdrop-filter: blur(0.1em);
+	background: #F003;
+
+	border: #AD0000; /*PFP BG Color*/
+	border-width: 1em;
+	border-style: solid;;
+	border-radius: 1em;
+}
+
+.main {
+    backdrop-filter: blur(0em);
+	margin-top: 10em;
+}
+
+p {
+    text-align: center;
+}
+
