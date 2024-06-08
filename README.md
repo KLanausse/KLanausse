@@ -15,4 +15,4 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 ```math
-\ce{$&#x5C;unicode[goombafont; transform: skew(45deg);]{x0000}$}
+\ce{$&#x5C;unicode[goombafont; transform: skew(45deg); background: url(https://raw.githubusercontent.com/KLanausse/KLanausse/main/Files/Images/BGTileBW.png);]{x0000}$}
