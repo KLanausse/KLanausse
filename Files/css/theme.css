@@ -13,9 +13,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #373737;
-    background-image: url(/Files/Images/BGTileBW.png);
-    background-size: 5%;
+    background-color: #6e1f1f;
+    background-image: url(/Files/Images/wallpaper2-alt.png);
+    background-size: 200vh;
     color: #ffffff;
     flex-direction: column;
     font-family: nintendo_NTLG-DB_002, sans-serif;

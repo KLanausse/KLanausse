@@ -1,71 +1,26 @@
-body {
-    height: 100vh;
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }
 
-.pill{
-    border-radius: 50pt;
-    /*height: 10%;*/
-    width: 80vw;
-    max-width: 80vh;
-    height: 7vh;
-    padding: 1vh;
-    margin-bottom: 2vh;
-
-    display: flex;
-    align-items: center;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
-    color: azure;
-    text-decoration: none;
-    font-size: 150%;
-    background-image: url(/Files/Images/Shine.png);
-    background-size: 100% 100%;
-    box-shadow: 0 6px 6px #000000d0;
+.floaty {
+    animation: float 6s ease-in-out infinite;
+	/*background: #F003;*/
 }
-.pill p {
-    /*
-    position: absolute;
-    transform: translate(-50%, 0);
-    left: 50%;
-    */
-    width: inherit;
+
+.main {
+    backdrop-filter: blur(0em);
+	margin: auto;
+}
+
+p {
     text-align: center;
-    font-size: 3vh;
 }
 
-.icon {
-    /*height: 7vh;*/
-    height: inherit;
-    margin-left: max(1vw,1vh);
-    position: absolute;
-    /*margin-bottom: 1vh;
-    margin-top: 1vh;*/
-}
-
-.subtext {
-    margin: 0;
-    font-weight: inherit;
-    font-size: max(1.5vw,1.5vh);
-    text-shadow: 0 6px 6px #000000d0;
-}
-
-#pfp {
-    height: min(30vh,50%);
-    border-radius: 20%;
-    position: bottom;
-    box-shadow: 0 6px 6px #000000d0;
-}
-
-#welcomeText {
-    font-size: min(5vh,5vw);
-    margin-bottom: 0;
-    text-shadow: 0 6px 1px #000000d0;
-}
-
-#github {
-    background-color: black;
-}
-
-#mastodon {
-    background-color: #17063B;
-}
