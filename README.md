@@ -4,7 +4,7 @@ I usually go by Lanausse *(la-now-say)* online.
  //TODO: Expand this out..
  I seem to flip flop between programming and music every other week
 
-/KLanausse/blob/main/README.md                                                                                    1,1            Top
+/KLanausse/blob/main/README.md                                                                         1,1            Top
 ~
 ~
 ~
@@ -15,5 +15,5 @@ I usually go by Lanausse *(la-now-say)* online.
 ~
 ~
 ~
-[No Name]                                                                                                         0,0-1          All
+[No Name]                                                                                               0,0-1          All
 ```
