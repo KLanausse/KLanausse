@@ -1,0 +1,226 @@
+<html>
+    <head>
+        <title>Roblox Fictional Currency Converter</title>
+        <link rel="icon" id="favicon" href="./favicon.webp">
+        <!--
+        <meta property="og:title" content="Roblox Fictional Currency Converter">
+        <meta property="og:description" content="1600 Microsoft Points equals... Solve for V-Bucks??? What the heck is that???!!!">
+        <meta property="og:type" content="website">
+        <meta name="og:image" itemprop="image" content="https://gdcolon.com/portfolio/currencies.png">
+        <meta name="theme-color" content="#ffcc00">
+    
+        <!-- I stole this from gdcolon lol -->
+        <!-- TODO: Make your own damn site -->
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Lato');
+
+            p, h1, h2, h3 {
+                font-family: arial;
+                color: white;
+            }
+
+            p {
+                font-size: 25px;
+                line-height: 35px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 { 
+                font-size: 30px;
+            }
+
+            body {
+                background-color: #222222;
+                text-align: center;
+            }
+
+            input, select {
+                height: 55px;
+                border: 3px solid red;
+                background-color: black;
+                border-radius: 5px;
+                color: white;
+                text-align: center;
+                font-size: 28px;
+                margin: 5 5;
+                font-family: arial;
+            }
+
+            input:focus, select:focus {
+                outline: none;
+                border-color: #787878;
+            }
+
+            input {
+                font-weight: bold;
+                width: 250px;
+            }
+
+            select {
+                
+            }
+
+            #main {
+                width: 900px;
+                margin: auto;
+            }
+
+            cy { color: yellow }
+            cg { color: lime }
+            ca, a { color: aqua !important }
+
+
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+
+        <h1 style="margin-top: 40px; margin-bottom: 40px">Roblox Fictional Currency Converter</h1>
+
+        <div id="main" style="display: none;">
+            <input class="amountInput" id="amount1" type="number" value=1000>
+            <select class="currencySelect" id="currency1"></select>
+    
+            <h2>= is equal to =</h2>
+    
+            <input class="amountInput" id="amount2" type="number">
+            <select class="currencySelect" id="currency2"></select>
+
+            <p>
+                <span id="exchange1"></span><br>
+                <span id="exchange2"></span>
+            </p>
+
+            <p id="warning1"></p>
+            <p id="warning2"></p>
+
+            <p style="display: inline-block; margin-right: 20px"><a target="_blank" href="https://gdcolon.com">Original site by Colon :</a></p>
+            <p style="display: inline-block; margin-left: 20px"><a target="_blank" href="https://gdcolon.com/currencies">Fictional Currency Converter</a></p>
+
+            <div>
+            <p style="display: inline-block; margin-right: 20px"><a target="_blank" href="https://www.lanausse.com">Roblox version by Lanausse :</a></p>
+            <p style="display: inline-block; margin-left: 20px"><a target="_blank" href="https://docs.google.com/spreadsheets/d/1G1D32MSIWsoBU6J0CiDa3TSDWnOLu21cIKLKeGVTuFM/edit?gid=0#gid=0">Data spreadsheet</a></p>
+            </div>
+        </div>
+
+        <div id="loading">
+            <p>Loading currencies...</p>
+        </div>
+    </body>
+
+    <script>
+
+    function choose(arr) { return arr[Math.floor(Math.random() * arr.length)] }  // random choose from array
+    function rng(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min }  // rng
+    function getAmount() { return Number($('#amount1').val()) || 0 }
+
+    let currencies = []
+    let selected = [0, 0]
+
+    // fetch data from google sheet
+    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQMSMd2JzpTCG7YsfBEjMKgijdMA3rZTfF7wRKQ5QT4K6IGRweka2OtHkLPulhXBztEG0IXZo_zQgGt/pub?gid=311055555&single=true&output=tsv")
+    .then(res => res.text()).then(csv => {
+
+        // csv parsing lets fucking GOOO
+        let data = csv.replace(/"|\r/g, "") // remove quotation marks and whatever \r is
+        .split("\n") // split at each line
+        .map(x => x.split("\t")) // split each line at each tab (its actually tsv not csv lmao)
+
+        let header = data.shift() // use first line as header
+
+        data.forEach(currency => {  // for each line...
+            let currencyObj = {} // objects are cooler, let's use those instead
+            currency.forEach((x, y) => { currencyObj[header[y]] = (Number(x) || x) }) // use first row for object key names
+            currencyObj.singlePrice = currencyObj.price / currencyObj.amount
+            if (!isNaN(currencyObj.singlePrice)) currencies.push(currencyObj) // add to list of currencies
+        })
+
+        currencies = currencies.sort((a, b) => a.currency.localeCompare(b.currency))
+
+        let currencyIndexes = [+localStorage.startCurrency, +localStorage.endCurrency].map(x => currencies[x] ? x : rng(0, currencies.length - 1))
+        while (isNaN(+localStorage.endCurrency) && currencyIndexes[1] == currencyIndexes[0]) currencyIndexes[1] = rng(0, currencies.length - 1)
+
+        $('.currencySelect').append("<option value='random' style='color: yellow'>Random!</option>")
+        .append(currencies.map((x, y) => `<option value=${y}>${x.currency} (${x.game})</option>`))
+        .each(function(index) {
+            let defaultCurrency = currencyIndexes[index]
+            $(this).find(`option:eq(${defaultCurrency + 1})`).prop('selected', true)
+            selected[index] = defaultCurrency
+            currencyInfo(index)
+        })
+
+        $('#amount1').val(+localStorage.currencyAmount || 1000)
+
+        changeCurrency()
+        $('#loading').hide()
+        $('#main').show()
+    })
+
+    function convert(reverse=false, amount) {
+        if (amount === undefined) amount = getAmount()
+        let startCurrency = currencies[selected[reverse ? 1 : 0]]
+        let endCurrency = currencies[selected[reverse ? 0 : 1]]
+        let convertedAmount = ((1 / endCurrency.singlePrice) * (startCurrency.singlePrice * amount))
+        convertedAmount = Number(convertedAmount.toFixed(6)) // js sometimes adds weird/wrong decimals, round a bit to fix
+        $(`#amount${reverse ? 1 : 2}`).val(convertedAmount)
+        localStorage.currencyAmount = $('#amount1').val() || 1000
+        return convertedAmount
+    }
+
+    function currencyInfo(index) {
+        let foundCurrency = currencies[selected[index]]
+        let inconsistency = foundCurrency.inconsistency
+        let col = ["cy", "cg"][index]
+
+        $(`#exchange${index + 1}`).html(`<${col}>${foundCurrency.amount} ${foundCurrency.currency}</${col}> = <${col}>R$${Number(foundCurrency.price).toFixed(2)}</${col}>${inconsistency && inconsistency != "None" && !inconsistency.includes(":") ? "*" : ""} (R$${+foundCurrency.singlePrice.toFixed(6)} each)`)
+
+        let warning = $(`#warning${index + 1}`)
+        switch (inconsistency.toLowerCase().split(" ")[0]) {
+            case "slightly": case "very":
+                return warning.show().html(`*<${col}>${foundCurrency.currency}</${col}> pricing is ${inconsistency.toLowerCase()} inconsistent between bundles.<br>The most popular bundle of <${col}>$${foundCurrency.price} for ${foundCurrency.amount}</${col}> has been used.`)
+            
+            case "specifies":
+                return warning.show().html(`*More expensive bundles grant extra <${col}>${foundCurrency.currency}</${col}>, however these are directly displayed as extras or bonuses and therefore do not count as inconsistent pricing.`)
+
+            case "source:":
+                let sourceURL = foundCurrency.inconsistency.split(": ")[1]
+                return warning.show().html(`*Source for <${col}>${foundCurrency.currency}</${col}>: <a target="_blank" href="${sourceURL}">${sourceURL}</a>`)
+
+            case "unknown":
+                return warning.show().html(`*<${col}>${foundCurrency.currency}</${col}> pricing consistency is ${inconsistency.toLowerCase()} and needs to be checked.`)
+
+            default: return warning.hide().text("")
+        }
+    }
+
+    $('#currency1').change(function() { changeCurrency($(this), 0) })
+    $('#currency2').change(function() { changeCurrency($(this), 1) })
+    
+    function changeCurrency(element, index) {
+        if (element) {
+            let isRandom = (element.val() == "random")
+            selected[index] = isRandom ? rng(0, currencies.length) : element.val()
+            if (isRandom) element.val(selected[index])
+        }
+        convert()
+        localStorage.startCurrency = selected[0]
+        localStorage.endCurrency = selected[1]
+        if (!isNaN(index)) currencyInfo(index)
+    }
+
+    // add min of 0 to number inputs
+    $(document).on('input blur', '.amountInput', function (event) {
+        if (event.isTrigger) return
+        let val = Number($(this).val())
+        let typedAmount = Math.max(0, val)
+        if (typedAmount !== val) $(this).val(typedAmount)
+        convert($(this).attr('id') == "amount2", typedAmount)
+    })
+
+        
+    </script>
+</html>
