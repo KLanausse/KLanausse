@@ -8,17 +8,22 @@
     font-display: swap;
 }
 
+html {
+    height: 100%;
+}
 
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #6e1f1f;
-    background-image: url(/Files/Images/wallpaper2-alt.png);
-    background-size: 200vh;
+    background-image: url(/Files/Images/TileThing.png);
     color: #ffffff;
     flex-direction: column;
     font-family: nintendo_NTLG-DB_002, sans-serif;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 h1 {
