@@ -194,7 +194,7 @@
                 return warning.show().html(`*<${col}>${foundCurrency.currency}</${col}> pricing consistency is ${inconsistency.toLowerCase()} and needs to be checked.`)
 
             case "sale":
-                return warning.show().html(`*<${col}>${foundCurrency.currency}</${col}> pricing was done checked during a sale and may be inaccurate. This needs to be rechecked.`)
+                return warning.show().html(`*<${col}>${foundCurrency.currency}</${col}> pricing was checked during a sale and may be inaccurate. This needs to be rechecked.`)
 
             default: return warning.hide().text("")
         }
