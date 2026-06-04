@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'nintendo_NTLG-DB_002';
+    src: local('nintendo_NTLG-DB_002'), local('nintendoNTLG-DB002'),
+        url('/Files/Fonts/nintendoNTLG-DB002.woff2') format('woff2'),
+        url('/Files/Fonts/nintendoNTLG-DB002.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6e1f1f;
+    background-image: url(/Files/Images/TileThing.png);
+    color: #ffffff;
+    flex-direction: column;
+    font-family: nintendo_NTLG-DB_002, sans-serif;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: min(5vh,5vw);
+}
+
+h2 {
+    font-size: min(4vh,4vw);
+}
+
+.navbarText {
+    text-align: center;
+    padding: 1vmin 1vmin;
+    text-shadow: 0 6px 6px #000000d0;
+    /*float: left;*/
+}
+
+.navbarText a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: max(2vh,2vw);
+}
+
+.navbarText a b {
+    color: #a0a0a0;
+}
+
+.subtext {
+    margin: 0;
+    font-weight: inherit;
+    font-size: min(2.5vw,2.5vh);
+    text-shadow: 0 6px 6px #000000d0;
+}
+
+/*need to change this so I can use other colors and what not*/
+.banner {
+    width: 100%;
+    text-align: center;
+    background: #FFFF00A0;
+    padding: 0.5vh;
+    text-shadow: #000 0 0 10px;
+}
+
+#title {
+    margin: 0;
+}
+
+#navbar {
+    padding-left: 0;
+    list-style-type: none;
+    font-weight: normal;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}

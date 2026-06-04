@@ -1,0 +1,26 @@
+.thumbnail {
+    height: 35vh;
+    border: #867f99 10px;
+    border-style: groove;
+}
+
+.active {
+    color: #00db00;
+}
+
+.inactive {
+    color: #db0000;
+}
+
+th {
+    width: 50vw;
+}
+
+th p {
+    padding: 0 5vw;
+}
+
+a h2 {
+    text-decoration: none;
+    color: white;
+}

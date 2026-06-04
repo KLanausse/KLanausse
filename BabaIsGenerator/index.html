@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Primary Meta Tags -->
+        <title>Baba Is Generator</title>
+        <link rel="icon" type="image/x-icon" href="Fell!Baba HD.png">
+        <meta property="og:title" content="Baba Is Generator">
+        <meta property="og:description" content="A Baba Is You Logo generator :P">
+        <meta property="og:image" content="https://www.lanausse.com/BabaIsGenerator/Thumbnail.png">
+
+        <!-- Stylesheets -->
+        <link rel='stylesheet' type='text/css' media='screen' href='./index.css'>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3.7.2/dist/dom-to-image-more.min.js"></script>
+        <script src='index.js'></script>
+        <script>
+            function scale() {
+                const scaleX = window.innerWidth / 1920;
+                const scaleY = window.innerHeight / (1080+100);
+                const scale = Math.min(Math.min(scaleX, scaleY), 1);
+
+                console.log(scale);
+                $("html").css("transform", `scale(${scale})`);
+            }
+
+            window.addEventListener('load', scale);
+            window.addEventListener('resize', scale);
+        </script>
+    </head>
+    <body class="quicksand">
+        <div id="controls">
+            <button onclick="generate()" style="margin-left: 4px;">Generate</button>
+            | Modifiers:
+            <input type="range" id="nodifierAmnt" min="1" max="5" value="1" step="1" list="markers">
+            <datalist id="markers">
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+            </datalist>
+            | Only Use Premade Assets:
+            <input id="onlyUsePremade" type="checkbox" checked>
+            <span>| Custom:</span>
+            <input
+            id="custom"
+            type="text"
+            onchange   = "updateLogo(this.value);"
+            onkeypress = "this.onchange();"
+            onpaste    = "this.onchange();"
+            oninput    = "this.onchange();"
+            />
+
+            <span id=right>
+            |
+            <button onclick="download()">Fullscreen</button>
+            |
+            Created by <a href="https://bsky.app/profile/lanausse.com">Lanausse</a> |
+            <span id="version">v0.9.7</span>
+            </span>
+        </div>
+        <div id="main">
+            <img id="vignette" src="imgs/VIGNETTE.png"/>
+            <div id="logo"><div id="logoShadow"></div></div>
+        </div>
+    </body>
+</html>

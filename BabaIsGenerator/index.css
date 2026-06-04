@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #303030;
+    overflow: hidden;
+    color: white;
+
+    transform: scale(0.8);
+    filter: saturate(1) contrast(1) brightness(100%);
+
+    transition: transform   1s      cubic-bezier(.68,-0.55,.27,1.55),
+                filter      0.05s    linear;
+
+a {
+    color: red;
+}
+
+#main {
+    width: 1920px;
+    height: 1080px;
+    background: #080808;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    outline: 10px dashed aliceblue;
+    border-radius: 13px;
+    margin: 10px;
+
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#logo {
+    background-image: url(imgs/LINE.png);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    padding-bottom: 32px;
+    margin: 0;
+    max-width: 1900px;
+}
+
+#logo, #logoShadow {
+    color: white;
+    font-weight: lighter;
+    filter: drop-shadow(0 0 20px black);
+
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+#logo #charname, #logo #prefix {
+}
+
+#prefix {
+    padding-right: 12px;
+}
+
+#vignette {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+}
+
+#controls {
+    padding-bottom: 5px;
+    align-content: center;
+    display: flex;
+    gap: 5px;
+}
+
+#right {
+    /*position: absolute;
+    right: -30px;*/
+}
+
+.text {
+}
+
+img:first-child.letter {
+    margin-left: 0 !important;
+}
+
+.letter {
+}
+
+.group img{
+    filter: brightness(50%) sepia(100) saturate(100) hue-rotate(25deg);
+}
