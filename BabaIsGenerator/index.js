@@ -356,9 +356,11 @@ function createText(text) {
     return createImage(`imgs/TEXT/${text}.png`, text, "#logoShadow").attr("class", "text")
 }
 
-function createLetter(char, parent) {
+function createLetter(char, parent, variant = 0) {
     char = letterToName[char] ?? char
-    const variant = Math.floor(Math.random()*(numVariants[char] ?? 1))+1;
+    variant = variant == 0
+    ? Math.floor(Math.random()*(numVariants[char] ?? 1))+1
+    : (variant%(numVariants[char] ?? 1))+1;
 
     return createImage(`imgs/LETTERS/${char}${variant}.png`, char, parent).attr("class", "letter")
 }
@@ -383,7 +385,7 @@ function createCustomText(text, hue, parent) {
     const group = createWordGroup("#logoShadow")
     .css("filter", `hue-rotate(${hue ?? Math.floor(Math.random() * 72)*5}deg)`);
     for (let i = 0; i < text.length; i++) {
-        var letter = createLetter(text[i], group);
+        var letter = createLetter(text[i], group, i+1);
 
         // Kerning
         if (kerning[text[i]]) {
