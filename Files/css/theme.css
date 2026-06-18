@@ -16,14 +16,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #6e1f1f;
-    background-image: url(/Files/Images/TileThing.png);
+    background: linear-gradient(0deg,#000000 0%, #af0000 100%); /*background: linear-gradient(0deg,#000000 0%, #af0000a0 100%);*/
+
+    /*background-image: url(/Files/Images/TileThing.png);
+     background-size: cover;
+     background-position: center center;
+     background-repeat: no-repeat;*/
+
     color: #ffffff;
     flex-direction: column;
     font-family: nintendo_NTLG-DB_002, sans-serif;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+
+    height: 100%;
+    overflow: hidden;
 }
 
 h1 {

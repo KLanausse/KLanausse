@@ -1,17 +1,22 @@
 @keyframes float {
 	0% {
-		transform: translatey(0px);
+		transform: translatey(-40px);
+		text-shadow: 0 10px 20px black;
 	}
 	50% {
-		transform: translatey(-20px);
+		transform: translatey(-80px);
+		text-shadow: 0 30px 40px black;
 	}
 	100% {
-		transform: translatey(0px);
+		transform: translatey(-40px);
+		text-shadow: 0 10px 20px black;
 	}
 }
 
 .floaty {
     animation: float 6s ease-in-out infinite;
+	text-shadow: 0 10px 20px black;
+	text-align: center;
 	/*background: #F003;*/
 }
 
@@ -19,6 +24,97 @@
     backdrop-filter: blur(0em);
 	margin: auto;
 }
+
+#bg-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	background-image: url(/Files/Images/reflection.png);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#links {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	font-weight: bold;
+}
+
+
+/* Buttons */
+#links a {
+	color: white;
+	text-decoration: none;
+
+	border-image: url('/Files/Images/Button/aero.png') 5;
+	border-style: solid;
+	border-width: 5px;
+
+	image-rendering: pixelated;
+	height: 100px;
+}
+
+#links a span {
+	display: inherit;
+
+	background-image: url(/Files/Images/Button/aero-background.png);
+	background-repeat: repeat-x;
+	background-size: auto 100%;
+	background-position: center;
+	height: 100%;
+}
+
+#links a:hover {
+border-image: url('/Files/Images/Button/aero-hover.png') 5;
+}
+
+#links a:hover span {
+background-image: url(/Files/Images/Button/aero-hover-background.png);
+}
+
+#links a:focus {
+border-image: url('/Files/Images/Button/aero-focus.png') 5;
+}
+
+#links a:focus span {
+background-image: url(/Files/Images/Button/aero-focus-background.png);
+}
+
+#links a:hover {
+	border-image: url('/Files/Images/Button/aero-hover.png') 5;
+}
+
+#links a:hover {
+border-image: url('/Files/Images/Button/aero-hover.png') 5;
+}
+
+#links a:hover:focus span {
+background-image: url(/Files/Images/Button/aero-hover-focus-background.png);
+}
+
+#links a:hover:focus span {
+	background-image: url(/Files/Images/Button/aero-hover-focus-background.png);
+}
+
+#links a:active {
+border-image: url('/Files/Images/Button/aero-active.png') 5;
+}
+
+#links a:active span {
+background-image: url(/Files/Images/Button/aero-active-background.png);
+}
+
+#links a:active:hover {
+border-image: url('/Files/Images/Button/aero-active.png') 5;
+}
+
+#links a:active:hover span {
+background-image: url(/Files/Images/Button/aero-active-background.png);
+}
+
 
 p {
     text-align: center;
