@@ -4,7 +4,7 @@
 		text-shadow: 0 10px 20px black;
 	}
 	50% {
-		transform: translatey(-80px);
+		transform: translatey(-60px);
 		text-shadow: 0 30px 40px black;
 	}
 	100% {
@@ -40,7 +40,11 @@
 	display: flex;
 	justify-content: center;
 	gap: 10px;
-	font-weight: bold;
+
+	flex-wrap: wrap;
+	width: 50vw;
+
+	font-family: Tahoma, sans-serif;
 }
 
 
@@ -54,17 +58,23 @@
 	border-width: 5px;
 
 	image-rendering: pixelated;
-	height: 100px;
 }
 
 #links a span {
-	display: inherit;
+	display: flex;
 
 	background-image: url(/Files/Images/Button/aero-background.png);
 	background-repeat: repeat-x;
 	background-size: auto 100%;
 	background-position: center;
 	height: 100%;
+}
+
+#links a span img {
+	width: 80px;
+	height: 80px;
+	padding: 10px;
+	image-rendering: auto;
 }
 
 #links a:hover {
@@ -91,11 +101,11 @@ background-image: url(/Files/Images/Button/aero-focus-background.png);
 border-image: url('/Files/Images/Button/aero-hover.png') 5;
 }
 
-#links a:hover:focus span {
+#links a:focus:hover span {
 background-image: url(/Files/Images/Button/aero-hover-focus-background.png);
 }
 
-#links a:hover:focus span {
+#links a:focus:hover span {
 	background-image: url(/Files/Images/Button/aero-hover-focus-background.png);
 }
 
