@@ -125,6 +125,9 @@ border-image: url('/Files/Images/Button/aero-active.png') 5;
 background-image: url(/Files/Images/Button/aero-active-background.png);
 }
 
+#blurb a {
+	color: #719dc4;
+}
 
 p {
     text-align: center;
