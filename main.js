@@ -22,6 +22,7 @@ const randomText = [
     "Check out VVVVVV",
     "Check out Baba Is You",
     "Check out Tetris Effect",
+    "Check out Pikuniku",
 
     "> git commit -m \"Update Main Page.\"",
     "> git push origin main",
