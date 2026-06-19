@@ -125,8 +125,18 @@ border-image: url('/Files/Images/Button/aero-active.png') 5;
 background-image: url(/Files/Images/Button/aero-active-background.png);
 }
 
+#blurb {
+	font-size: 24px;
+	font-family: Tahoma, sans-serif;
+}
+
 #blurb a {
 	color: #719dc4;
+}
+
+#blurb .emoji {
+	height: 26px;
+	margin-bottom: -4px;
 }
 
 p {
