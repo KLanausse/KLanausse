@@ -23,6 +23,9 @@
 .main {
     backdrop-filter: blur(0em);
 	margin: auto;
+
+	display: grid;
+	place-items: center;
 }
 
 #bg-overlay {
@@ -45,6 +48,7 @@
 	width: 50vw;
 
 	font-family: Tahoma, sans-serif;
+	margin: 5px;
 }
 
 
