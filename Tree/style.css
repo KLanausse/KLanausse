@@ -1,0 +1,36 @@
+html {
+    background: black;
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    height: 100%;
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+.main {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#tree:hover {
+    cursor: pointer;
+}
+
+#path {
+    z-index: -1;
+    position: absolute;
+    transform: scale(1.8) translateY(78px);
+}
