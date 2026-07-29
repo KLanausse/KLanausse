@@ -56,6 +56,8 @@ const randomText = [
 
     `"${emoji("slugcat.webp", "Survivor from Rain World")}"`,
     `"${emoji("BABA_IS_ANIM.gif", "Baba from Baba Is You")}"`,
+
+    "-POINT OF ADVICE-"
 ];
 
 function emoji(fileName, alt=fileName) {
@@ -64,6 +66,13 @@ function emoji(fileName, alt=fileName) {
 
 async function getLatestCommit() {
     //https://github.com/KLanausse/KLanausse/latest-commit
+}
+
+// https://stackoverflow.com/questions/10730362/get-cookie-by-name
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
 $(document).ready(function(){
@@ -77,6 +86,9 @@ $(document).ready(function(){
         $("[href='/BabaIsGenerator']").attr("href", "/Tree");
     }
     */
+    if (getCookie('egg') == 'true') {
+        $("#egg").show();
+    }
 
     $("html").click(function(){
         if (!playing) {
